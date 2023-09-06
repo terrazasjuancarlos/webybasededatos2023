@@ -1,26 +1,8 @@
-$(document).ready(function(){
-    $("#boton1").on("click",function(){
-        alert("Evento Click");
-    });
+﻿$(document).ready(function(){
 
-    $("#div1").on("dblclick",function(){
-        alert("Evento Doble Click");
-    });
-
-    $("#input1").focus(function(){
-        console.log("Método Focus ");
-    });
-
-    $("#texto1").hover(function(){
-        $(this).css("background-color", "red");
-
-    },function(){
-        $(this).css("background-color", "white");
-    }
-    );
-
-    $("#input2").keydown(function(){
-        console.log("Key Down")
-        $(this).css("background-color", "yellow");
+    var contador = 0;
+    $('img').click(function(e){
+        var nombre_imagen = $(this).attr('data-id')
+        $(this).attr('src','imagenes/' + nombre_imagen);
     });
 });
