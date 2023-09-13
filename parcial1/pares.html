@@ -1,45 +1,133 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <title>juego pares</title>
+    <script src="jquery-3.7.1.js"></script>
+    <script src="pares.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+
 </head>
 <body>
     <div class="container">
-        <h1>Memorama</h1>
+        <h1>juego de los pares</h1><hr>
+        <h1>N° de pares: <span id="total_pares">0</span></h1>
         <div class="row">
             <div class="col-3">
-                <img src="imagenes/carta volteada.jpg" width="100px" class="img-fluid" data-id="par1.webp">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par5.jpg" data-estado="0">
             </div>
             <div class="col-3">
-                <img src="imagenes/carta volteada.jpg" width="100px" class="img-fluid" data-id="par2.webp">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par1.jpg" data-estado="0">
             </div>
             <div class="col-3">
-                <img src="imagenes/carta volteada.jpg" width="100px" class="img-fluid" data-id="par1.webp">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par3.jpg" data-estado="0">
             </div>
             <div class="col-3">
-                <img src="imagenes/carta volteada.jpg" width="100px" class="img-fluid" data-id="par2.webp">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par8.jpg" data-estado="0">
             </div>
-        </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par2.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par7.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par4.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par6.jpg" data-estado="0">
+            </div>
+
+        </div><br>
+
         <div class="row">
             <div class="col-3">
-                <img src="imagenes/carta volteada.jpg" width="100px" class="img-fluid" data-id="par1.webp">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par7.jpg" data-estado="0">
             </div>
             <div class="col-3">
-                <img src="imagenes/carta volteada.jpg" width="100px" class="img-fluid" data-id="par2.webp">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par4.jpg" data-estado="0">
             </div>
             <div class="col-3">
-                <img src="imagenes/carta volteada.jpg" width="100px" class="img-fluid" data-id="par1.webp">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par6.jpg" data-estado="0">
             </div>
             <div class="col-3">
-                <img src="imagenes/carta volteada.jpg" width="100px" class="img-fluid" data-id="par2.webp">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par3.jpg" data-estado="0">
             </div>
-        </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par8.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par1.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par5.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par2.jpg" data-estado="0">
+            </div>
+
+        </div><br>
+
+        <div class="row">
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par3.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par5.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par2.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par4.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par8.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par1.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par7.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par6.jpg" data-estado="0">
+            </div>
+
+        </div><br>
+
+        <div class="row">
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par4.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par8.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par3.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par1.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par6.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par2.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par7.jpg" data-estado="0">
+            </div>
+            <div class="col-3">
+                <img src="imagenes/carta_volteada.jpg" class="img-fluid" data-id="imagenes/par5.jpg" data-estado="0">
+            </div>
+
+        </div><br>
+
     </div>
-    <script src="pares.js"></script>
+
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
