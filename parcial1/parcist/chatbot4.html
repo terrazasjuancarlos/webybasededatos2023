@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.js"></script>
+    <script src="practica4.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Corregido el nombre del archivo -->
+    <title>Parchís</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .board {
+            width: 630px;
+            height: 679px;
+            display: grid;
+            grid-template-columns: repeat(15, 1fr);
+            grid-template-rows: repeat(15, 1fr);
+            gap: 4px;
+            background-color: #fff;
+        }
+
+        .cell {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+        }
+
+        .azul {
+            background-color: #0000FF;
+        }
+
+        .amarillo {
+            background-color: #FFFF00;
+        }
+
+        .verde {
+            background-color: #008000;
+        }
+
+        .rojo {
+            background-color: #FF0000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Parchís</h1>
+    <div id="board">
+
+        <table border="3px">
+            <!-- 1 -->
+            <tr>
+                <td class="amarillo" colspan="7" rowspan="7">
+                    <div class="player">
+                        <img class="parchis-piece" src="ficha_amarillo.png" alt="Ficha amarillo" width="30px">
+                        <img class="parchis-piece" src="ficha_amarillo.png" alt="Ficha amarillo" width="30px">
+                        <img class="parchis-piece" src="ficha_amarillo.png" alt="Ficha amarillo" width="30px">
+                        <img class="parchis-piece" src="ficha_amarillo.png" alt="Ficha amarillo" width="30px">
+                    </div>
+                </td>
+                <td colspan="2">1</td>
+                <td colspan="2">68</td>
+                <td colspan="2">67</td>
+                <td class="verde" colspan="7" rowspan="7">
+                    <div class="player">
+                        <img class="parchis-piece" src="ficha_verde.png" alt="Ficha verde" width="30px">
+                        <img class="parchis-piece" src="ficha_verde.png" alt="Ficha verde" width="30px">
+                        <img class="parchis-piece" src="ficha_verde.png" alt="Ficha verde" width="30px">
+                        <img class="parchis-piece" src="ficha_verde.png" alt="Ficha verde" width="30px">
+                    </div>
+                </td>
+            </tr>
+            <!-- 2 -->
+            <tr>
+                <td colspan="2">2</td>
+                <td class="amarillo" colspan="2">-</td>
+                <td colspan="2">66</td>
+            </tr>
+            <!-- 3 -->
+            <tr>
+                <td colspan="2">3</td>
+                <td class="amarillo" colspan="2">-</td>
+                <td colspan="2">65</td>
+            </tr>
+            <!-- 4 -->
+            <tr>
+                <td colspan="2">4</td>
+                <td class="amarillo" colspan="2">-</td>
+                <td colspan="2">64</td>
+            </tr>
+            <!-- 5 -->
+            <tr>
+                <td class="amarillo" colspan="2">5</td>
+                <td class="amarillo" colspan="2">-</td>
+                <td colspan="2">63</td>
+            </tr>
+            <!-- 6 -->
+            <tr>
+                <td colspan="2">6</td>
+                <td class="amarillo" colspan="2">-</td>
+                <td colspan="2">62</td>
+            </tr>
+            <!-- 7 -->
+            <tr>
+                <td colspan="2">7</td>
+                <td class="amarillo" colspan="2">-</td>
+                <td colspan="2">61</td>
+            </tr>
+            <!-- 8 -->
+            <!-- Primera línea justo debajo de los grandes -->
+            <tr>
+                <td rowspan="2">16</td>
+                <td rowspan="2">15</td>
+                <td rowspan="2">14</td>
+                <td rowspan="2">13</td>
+                <td rowspan="2">12</td>
+                <td rowspan="2">11</td>
+                <td rowspan="2">10</td>
+                <td id="vacio"></td>
+                <td>8</td>
+                <td>-</td>
+                <td>-</td>
+                <td>60</td>
+                <td id="vacio"></td>
+                <td rowspan="2">58</td>
+                <td rowspan="2">57</td>
+                <td class="verde" rowspan="2">56</td>
+                <td rowspan="2">55</td>
+                <td rowspan="2">54</td>
+                <td rowspan="2">53</td>
+                <td rowspan="2">52</td>
+            </tr>
+            <!-- 9 -->
+            <tr>
+                <td>9</td>
+                <td colspan="4" rowspan="4"><img width="95%" height="" src="imagenes/centro.jpg" /></td>
+                <td>59</td>
+            </tr>
+            <!-- 10 -->
+            <tr>
+                <td rowspan="2">17</td>
+                <td class="azul" rowspan="2">|</td>
+                <td class="azul" rowspan="2">|</td>
+                <td class="azul" rowspan="2">|</td>
+                <td class="azul" rowspan="2">|</td>
+                <td class="azul" rowspan="2">|</td>
+                <td class="azul" rowspan="2">|</td>
+                <td>|</td>
+                <td>|</td>
+                <td class="verde" rowspan="2">|</td>
+                <td class="verde" rowspan="2">|</td>
+                <td class="verde" rowspan="2">|</td>
+                <td class="verde" rowspan="2">|</td>
+                <td class="verde" rowspan="2">|</td>
+                <td class="verde" rowspan="2">|</td>
+                <td rowspan="2">51</td>
+            </tr>
+            <!-- 11 -->
+            <tr>
+                <td>|</td>
+                <td>|</td>
+            </tr>
+            <!-- 12 -->
+            <tr>
+                <td rowspan="2">18</td>
+                <td rowspan="2">19</td>
+                <td rowspan="2">20</td>
+                <td rowspan="2">21</td>
+                <td class="azul" rowspan="2">22</td>
+                <td rowspan="2">23</td>
+                <td rowspan="2">24</td>
+                <td>25</td>
+                <td>43</td>
+                <td rowspan="2">44</td>
+                <td rowspan="2">45</td>
+                <td rowspan="2">46</td>
+                <td rowspan="2">47</td>
+                <td rowspan="2">48</td>
+                <td rowspan="2">49</td>
+                <td rowspan="2">50</td>
+            </tr>
+            <!-- 13 -->
+            <tr>
+                <td id="vacio"></td>
+                <td>26</td>
+                <td>-</td>
+                <td>-</td>
+                <td>42</td>
+                <td id="vacio"></td>
+            </tr>
+            <!-- 14 -->
+            <tr>
+                <td class="azul" colspan="7" rowspan="7">
+                    <div class="player">
+                        <img class="parchis-piece" src="ficha_azul.png" alt="Ficha azul" width="30px">
+                        <img class="parchis-piece" src="ficha_azul.png" alt="Ficha azul" width="30px">
+                        <img class="parchis-piece" src="ficha_azul.png" alt="Ficha azul" width="30px">
+                        <img class="parchis-piece" src="ficha_azul.png" alt="Ficha azul" width="30px">
+                    </div>
+                </td>
+                <td colspan="2">27</td>
+                <td class="rojo" colspan="2">-</td>
+                <td colspan="2">41</td>
+                <td class="rojo" colspan="7" rowspan="7">
+                    <div class="player">
+                        <img class="parchis-piece" src="ficha_roja.png" alt="Ficha Roja" width="30px">
+                        <img class="parchis-piece" src="ficha_roja.png" alt="Ficha Roja" width="30px">
+                        <img class="parchis-piece" src="ficha_roja.png" alt="Ficha Roja" width="30px">
+                        <img class="parchis-piece" src="ficha_roja.png" alt="Ficha Roja" width="30px">
+                    </div>
+
+                </td>
+            </tr>
+            <!-- 15 -->
+            <tr>
+                <td colspan="2">28</td>
+                <td class="rojo" colspan="2">-</td>
+                <td colspan="2">40</td>
+            </tr>
+            <!-- 16 -->
+            <tr>
+                <td colspan="2">29</td>
+                <td class="rojo" colspan="2">-</td>
+                <td class="rojo" colspan="2">39</td>
+            </tr>
+            <!-- 17 -->
+            <tr>
+                <td colspan="2">30</td>
+                <td class="rojo" colspan="2">-</td>
+                <td colspan="2">38</td>
+            </tr>
+            <!-- 18 -->
+            <tr>
+                <td colspan="2">31</td>
+                <td class="rojo" colspan="2">-</td>
+                <td colspan="2">37</td>
+            </tr>
+            <!-- 19 -->
+            <tr>
+                <td colspan="2">32</td>
+                <td class="rojo" colspan="2">-</td>
+                <td colspan="2">36</td>
+            </tr>
+            <!-- 20 -->
+            <tr>
+                <td colspan="2">33</td>
+                <td colspan="2">34</td>
+                <td colspan="2">35</td>
+            </tr>
+
+        </table>
+        <!-- Por simplicidad, se han omitido las casillas individuales en este ejemplo -->
+    </div>
+
+    <button id="rollDice">Lanzar Dados</button>
+    <p id="message">Esperando a que alguien lance los dados...</p>
+
+    <script>
+        const players = ['Rojo', 'Azul', 'Verde', 'Amarillo']; // Nombres de los jugadores
+        let currentPlayer = 0; // Índice del jugador actual
+        let playerPieces = {
+            Rojo: [0, 0, 0, 0], // Cantidad de fichas de cada jugador en sus inicios
+            Azul: [0, 0, 0, 0],
+            Verde: [0, 0, 0, 0],
+            Amarillo: [0, 0, 0, 0]
+        };
+        let diceValue = 0;
+
+        // Función para lanzar el dado
+        function rollDice() {
+            diceValue = Math.floor(Math.random() * 6) + 1;
+            document.getElementById("message").textContent = `${players[currentPlayer]} lanzó un ${diceValue}.`;
+
+            // Verifica si el valor del dado es 5
+            // Verifica si el número en el dado es 5 y si la ficha está en la posición inicial
+            if (steps === 5 && currentPosition === 0) {
+            // Mueve la ficha directamente al cuadro 39
+            pieces[pieceIndex] = 39;
+            } else {
+            
+            if (diceValue === 5) {
+                // Verifica si el jugador tiene fichas disponibles
+                const player = players[currentPlayer];
+                const pieces = playerPieces[player];
+                const availablePieceIndex = pieces.indexOf(0);
+                if (availablePieceIndex !== -1) {
+                    // Agrega una ficha al juego (actualiza el estado de la ficha)
+                    pieces[availablePieceIndex] = 1;
+                    // Aquí deberías implementar la lógica para mostrar la ficha en el tablero
+                    console.log(`${player} agregó una ficha al juego.`);
+                }
+            }
+        }
+
+        // Función para mover una ficha
+        function movePiece(player, pieceIndex, steps) {
+            // Lógica para mover una ficha
+             document.getElementById("rollDice").addEventListener("click", function () {
+            // Simula el lanzamiento de dos dados
+            const dice1 = rollDice();
+            const dice2 = rollDice();
+
+            const totalSteps = dice1 + dice2;
+            const currentPlayer = 1; // Cambia esto para indicar el jugador actual
+
+            movePiece(currentPlayer, totalSteps);
+
+            // Actualiza el mensaje en la página
+            document.getElementById("message").textContent = `Jugador ${currentPlayer}: Avanza ${totalSteps} casillas.`;
+            });
+
+            const pieces = playerPieces[player];
+            const currentPosition = pieces[pieceIndex];
+
+            // Calcula la nueva posición de la ficha
+            const newPosition = currentPosition + steps;
+
+            
+
+        }
+
+        // Evento para lanzar los dados
+        document.getElementById("rollDice").addEventListener("click", function () {
+            rollDice();
+            movePiece(players[currentPlayer], 0, diceValue); // Mover la ficha 0 del jugador actual
+            // Actualiza el turno al siguiente jugador
+            currentPlayer = (currentPlayer + 1) % players.length;
+        });
+    </script>
+    </body>
+
+</html>
