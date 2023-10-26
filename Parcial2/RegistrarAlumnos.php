@@ -1,10 +1,15 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RegistarAlumnos</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+    include 'conexion.php'                
+
+    $nombre = $_POST["nombre"];
+    $numero_control = $_POST["numero_control"];
+    $semestre = $_POST["semestre"];
+    $edad = $_POST["edad"];
+    $turno = $_POST["turno"];
+    $sexo = $_POST["sexo"];
+
+    $sql="INSET INTG alumnos (nombre,numero_contro, semestre ,edad ,turno,sexo) ";
+    $sql=="VALUEST"       
+    $edad = $_POST["edad"];
+
+?>
