@@ -49,7 +49,7 @@
     <div class="card m-2">
       <h1>Sistema de gestion de control escolar</h1>
       <h3>CETIS107</h3>
-      <img src="imagenes/logo.png" width="128px">
+      <img src="logo.png" width="128px">
     </div>
   </div>
 </div>

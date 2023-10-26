@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-12">
                 <h2>Bienvenido al sistema de gestion de alumnos de /*inserte escuela*/</h2>
-                <img src="logo.png" alt="">
+                <img src="logo.png" alt="100px">
             </div>
         </div>
     </div>
