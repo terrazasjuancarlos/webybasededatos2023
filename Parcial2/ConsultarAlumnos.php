@@ -31,13 +31,17 @@
                             <?php while($registro = $datos->fetch_assoc()){?>
                                 <tr>
                                     <td><?php echo $registro["id"]?></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><?php echo $registro["nombre"]?></td>
+                                    <td><?php echo $registro["nc"]?></td>
+                                    <td><?php echo $registro["semestre"]?></td>
+                                    <td><?php echo $registro["edad"]?></td>
+                                    <td><?php echo $registro["turno"]?></td>
+                                    <td><?php echo $registro["sexo"]?></td>
                                 </tr>
+                                <td>
+                                    <a href="" class="btn btn-sm btn-primary">Editar</a>
+                                    <a href="EliminarAlumno.php?id=<?php echo $registro("id");" class="btn btn-sm btn-primary">Editar</a>
+                                </td>
                         </tbody>
                     </table>
                 <?php }else{?>
