@@ -44,6 +44,7 @@
                     <div class="form-group">
                         <label for="">Turno</label>
                         <select name="turno" class="form-control" required>
+                            <option select value="<?php echo $alumno["turno"];?>">Selecciona el turno</option>
                             <option value="">Selecciona el turno</option>
                             <option value="MATUTINO">Matutino</option>
                             <option value="VESPERTINO">Vespertino</option>
