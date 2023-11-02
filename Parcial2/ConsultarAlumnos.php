@@ -3,53 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>consulat</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="jquery-3.7.1.js"></script>
 </head>
 <body>
-    <?php include 'home.php';
-          include 'conexion.php';
-          $sql ="SELECT * FROM alumnos";
-          $datos = $conexion>query($sql);   
+    <?php 
+    include 'menu.php';
+    include 'conexionn.php';
+
+    $sql = "SELECT * FROM alumnos";
+    $datos = $conexionn->query($sql);
+
     ?>
+
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <?php if($datos->$num_row==0){?>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <tr>id</tr>
-                                <tr>Nombre</tr>
-                                <tr>Numero de Control</tr>
-                                <tr>Semestre</tr>
-                                <tr>Edad</tr>
-                                <tr>Turno</tr>
-                                <tr>Sexo</tr>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php while($registro = $datos->fetch_assoc()){?>
+                <?php if($datos->num_rows > 0) { ?>
+                    <div class="table-responsive card m-4 p-2">
+                        <table class="table table-hover">
+                            <thead>
                                 <tr>
-                                    <td><?php echo $registro["id"]?></td>
-                                    <td><?php echo $registro["nombre"]?></td>
-                                    <td><?php echo $registro["nc"]?></td>
-                                    <td><?php echo $registro["semestre"]?></td>
-                                    <td><?php echo $registro["edad"]?></td>
-                                    <td><?php echo $registro["turno"]?></td>
-                                    <td><?php echo $registro["sexo"]?></td>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Número de control</th>
+                                    <th>Semestre</th>
+                                    <th>Edad</th>
+                                    <th>Turno</th>
+                                    <th>Sexo</th>                               
                                 </tr>
-                                <td>
-                                    <a href="" class="btn btn-sm btn-primary">Editar</a>
-                                    <a href="EliminarAlumno.php?id=<?php echo $registro("id");" class="btn btn-sm btn-primary">Editar</a>
-                                </td>
-                        </tbody>
-                    </table>
-                    <?php }else{?>
-                        <h3>No existen alumnos en la base de datos</h3>
-                    <?php
-                }?>        
+                            </thead>
+                                <tbody>
+                                    <?php while($registro = $datos->fetch_assoc()){ ?>
+                                        <tr>
+                                            <td><?php echo $registro ["id"]; ?></td>
+                                            <td><?php echo $registro ["nombre"]; ?></td>
+                                            <td><?php echo $registro ["numero_control"]; ?></td>
+                                            <td><?php echo $registro ["semestre"]; ?></td>
+                                            <td><?php echo $registro ["edad"]; ?></td>
+                                            <td><?php echo $registro ["turno"]; ?></td>
+                                            <td><?php echo $registro ["sexo"]; ?></td>
+                                            <td>
+                                                <a href="editarAlumnos.php?id=<?php echo $registro["id"]; ?>" class="btn btn-sm btn-primary">Editar</a>
+                                                <a href="eliminarAlumno.php?id=<?php echo $registro["id"]; ?>" class="btn btn-sm btn-danger">Eliminar</a>
+                                            </td>
+                                        </tr>
+
+
+                                   <?php } ?>
+
+                                </tbody>
+                        </table>
+                    </div> 
+                        <?php } else { ?>
+                            <h2 class="m-4">No existe datos de este alumno en la base de datos></h2>
+
+                       <?php } ?>
+                    </div>
             </div>
+         </div>
         </div>
+
+        <footer class="text-center">
+            <hr>
+            CETIS 107 &copy; 2023
+            
+
+        </footer>
+        <script src="js/bootstrap.min.js">
+
+        </script>
     </div>
 </body>
 </html>
