@@ -2,7 +2,6 @@
     include 'conexion.php';
 
     $nombre = $_POST["nombre"];
-    
     $semestre = $_POST["semestre"];
     $especialidad = $_POST["especialidad"];
     $turno = $_POST["turno"];

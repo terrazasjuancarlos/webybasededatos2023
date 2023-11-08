@@ -50,7 +50,7 @@
                     </table>
                 </div>
                 <?php } else { ?>
-                    <h2 class="m-4">No existe datos de Materias en la base e datos</h2>
+                    <h2 class="m-4">No existe datos de Materias en la base de datos</h2>
                 <?php } ?>
             </div>
         </div>
