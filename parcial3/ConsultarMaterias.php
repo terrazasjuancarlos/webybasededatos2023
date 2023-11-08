@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultar materias</title>
+    <title>Consultar Materias</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="code.jquery.com_jquery-3.7.1.js"></script>
 </head>
@@ -13,7 +13,7 @@
         include 'menu.php'; 
         include 'conexion.php'; 
         //Recuperamos los datos de la base de datos 
-        $sql = "SELECT * FROM alumnos";
+        $sql = "SELECT * FROM Materias";
         $datos = $conexion->query($sql);
 
     ?>    
@@ -28,11 +28,8 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nombre</th>
-                                <th>Número de control</th>
                                 <th>Semestre</th>
-                                <th>Edad</th>
-                                <th>Turno</th>
-                                <th>Sexo</th>
+                                <th>Especialidad</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -41,14 +38,11 @@
                                 <tr>
                                     <td><?php echo $registro["id"]; ?></td>
                                     <td><?php echo $registro["nombre"]; ?></td>
-                                    <td><?php echo $registro["numero_control"]; ?></td>
                                     <td><?php echo $registro["semestre"]; ?></td>
-                                    <td><?php echo $registro["edad"]; ?></td>
-                                    <td><?php echo $registro["turno"]; ?></td>
-                                    <td><?php echo $registro["sexo"]; ?></td>
+                                    <td><?php echo $registro["especialidad"]; ?></td>
                                     <td>
-                                        <a href="editarAlumno.php?id=<?php echo $registro["id"]; ?>"  class="btn btn-sm btn-primary">Editar</a>
-                                        <a href="eliminarAlumno.php?id=<?php echo $registro["id"]; ?>" class="btn btn-sm btn-danger">Eliminar</a>
+                                        <a href="EditarMaterias.php?id=<?php echo $registro["id"]; ?>"  class="btn btn-sm btn-primary">Editar</a>
+                                        <a href="EliminarMaterias.php?id=<?php echo $registro["id"]; ?>" class="btn btn-sm btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -56,7 +50,7 @@
                     </table>
                 </div>
                 <?php } else { ?>
-                    <h2 class="m-4">No existe datos de alumnos en la base e datos</h2>
+                    <h2 class="m-4">No existe datos de Materias en la base e datos</h2>
                 <?php } ?>
             </div>
         </div>
