@@ -1,10 +1,13 @@
 <?php
 
     include 'conexion.php';
+    $id = $_POST["id"];
+    $nombre = $_POST["nombre"];
+    $especialidad = $_POST["especialidad"];
+    $semestre = $_POST["semestre"];
+    
 
-    $id = $_GET['id'];
-
-    $sql = "DELETE FROM materias where id = ".$id;
+    $sql = "UPDATE Materias SET nombre='".$nombre."', especialidad  $especialidad='".$especialidad."', semestre=".$semestre." WHERE id=".$id;
 
     if($conexion->query($sql) === TRUE){
         header("Location: ConsultarMaterias.php");
