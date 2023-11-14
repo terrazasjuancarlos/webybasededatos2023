@@ -53,10 +53,10 @@ INSERT INTO `alumnos` (`id`, `nombre`, `numero_control`, `semestre`, `edad`, `tu
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `materias`
+-- Estructura de tabla para la tabla `materia`
 --
 
-CREATE TABLE `materias` (
+CREATE TABLE `materia` (
   `id` bigint(11) NOT NULL,
   `nombre` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `semestre` int(11) NOT NULL,
@@ -64,10 +64,10 @@ CREATE TABLE `materias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `materias`
+-- Volcado de datos para la tabla `materia`
 --
 
-INSERT INTO `materias` (`id`, `nombre`, `semestre`, `especialidad`) VALUES
+INSERT INTO `materia` (`id`, `nombre`, `semestre`, `especialidad`) VALUES
 (7, 'teoria matematica', 4, 0),
 (8, '', 0, 0),
 (9, '', 0, 0);
@@ -83,9 +83,9 @@ ALTER TABLE `alumnos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `materias`
+-- Indices de la tabla `materia`
 --
-ALTER TABLE `materias`
+ALTER TABLE `materia`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -99,9 +99,9 @@ ALTER TABLE `alumnos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `materias`
+-- AUTO_INCREMENT de la tabla `materia`
 --
-ALTER TABLE `materias`
+ALTER TABLE `materia`
   MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
