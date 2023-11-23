@@ -46,9 +46,10 @@
                                     <td><?php echo $registro["edad"]; ?></td>
                                     <td><?php echo $registro["turno"]; ?></td>
                                     <td><?php echo $registro["sexo"]; ?></td>
+                                    <td><?php echo $registro["id_alumnosmaterias"]; ?></td>
                                     <td>
-                                        <a href="editarAlumno.php?id=<?php echo $registro["id"]; ?>"  class="btn btn-sm btn-primary">Editar</a>
-                                        <a href="eliminarAlumno.php?id=<?php echo $registro["id"]; ?>" class="btn btn-sm btn-danger">Eliminar</a>
+                                        <a href="editarAlumnos_materias.php?id=<?php echo $registro["id"]; ?>"  class="btn btn-sm btn-primary">Editar</a>
+                                        <a href="eliminarAlumnos_materias.php?id=<?php echo $registro["id"]; ?>" class="btn btn-sm btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php } ?>
