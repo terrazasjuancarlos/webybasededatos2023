@@ -29,7 +29,7 @@
                     if($datos_alumnos->num_rows > 0){
                         while($registro = $datos_alumnos->fetch_assoc()){?>
                             
-                            <option value=""><?php echo $registro["id"]; ?><?php echo $registro["nombre"]; ?></option>
+                            <option value=""><?php echo $registro["nombre"]; ?></option>
 
                         <?php } ?> 
                         <?php } ?>
